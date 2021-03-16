@@ -1,4 +1,5 @@
 import { FlexItem } from "../FlexItem/FlexItem";
+import { SearchInput } from "../SearchInput/SearchInput";
 
 export const Header = () => {
     return (
@@ -6,8 +7,12 @@ export const Header = () => {
             <FlexItem>
                 <h1>Search Hacker News</h1>
             </FlexItem>
-            <FlexItem>
-                <input type="text" class="form-input" value="react" />
+            <FlexItem className="align-right">
+                <SearchInput
+                    onChange={(searchText) => {
+                        // API call here
+                    }}
+                />
             </FlexItem>
         </form>
     );
