@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .container {
     max-width: 100vh;
     padding: 2vh;
@@ -25,4 +29,27 @@
 
 .align-right {
     text-align: right;
+}
+
+.story {
+    background: #fff;
+    border-radius: 0.25rem;
+    padding: 1rem 2rem;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.story .title {
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+}
+
+.story .info {
+    margin-bottom: 0.5rem;
+    color: #617d98;
+}
+
+.story a.text-link {
+    font-size: 0.85rem;
+    color: #49a6e9;
 }
