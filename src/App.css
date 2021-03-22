@@ -5,6 +5,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f1f5f8;
 }
 
 .container {
@@ -35,8 +36,17 @@ body {
     background: #fff;
     border-radius: 0.25rem;
     padding: 1rem 2rem;
-    width: 50%;
+    width: 48%;
+    margin: 1%;
     box-sizing: border-box;
+}
+
+.story:nth-child(odd) {
+    margin-left: 0;
+}
+
+.story:nth-child(even) {
+    margin-right: 0;
 }
 
 .story .title {
