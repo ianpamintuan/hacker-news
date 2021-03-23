@@ -9,7 +9,12 @@ export const Story = ({ className, data }) => {
             <h4 className="title">{title}</h4>
             <p className="info">{`${points} points by ${author} | ${num_comments} comments`}</p>
             <div className="links">
-                <a className="text-link" href={url} target="_blank" rel="noreferrer">
+                <a
+                    className="text-link"
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     Read more
                 </a>
             </div>
