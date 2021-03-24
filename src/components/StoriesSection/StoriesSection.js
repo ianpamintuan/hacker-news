@@ -3,7 +3,7 @@ import { Story } from "../Story/Story";
 
 export const StoriesSection = ({ list }) => {
     return (
-        <section className="stories flex-container">
+        <section className="stories flex-container space-around row-wrap">
             {list?.hits?.map((story) => (
                 <Story data={story} />
             ))}

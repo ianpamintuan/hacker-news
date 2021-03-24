@@ -4,6 +4,7 @@ import { Header } from "../../components/Header/Header";
 import { StoriesSection } from "../../components/StoriesSection/StoriesSection";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 export const MainPage = () => {
     const { list, loading, error } = useFetch(
@@ -21,7 +22,10 @@ export const MainPage = () => {
                     className="centered"
                 />
             ) : (
+                <>
                 <StoriesSection list={list} />
+                <Pagination  />
+                </>
             )}
         </div>
     );

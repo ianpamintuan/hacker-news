@@ -24,11 +24,21 @@ body {
 
 .flex-container {
     display: flex;
+}
+
+.row-wrap {
     flex-flow: row wrap;
+}
+
+.space-around{
     justify-content: space-around;
 }
 
-.flex-container.align-center {
+.justify-center {
+    justify-content: center
+}
+
+.align-center {
     align-items: center;
 }
 
@@ -70,4 +80,21 @@ body {
 .story a.text-link {
     font-size: 0.85rem;
     color: #49a6e9;
+}
+
+.pagination {
+    margin: 1rem 0;
+}
+
+button {
+    background: #fff;
+    border-radius: 0.25rem;
+    border: 0;
+    width: 2.5rem;
+    margin: 0 0.25rem;
+}
+
+.active {
+    background: #49a6e9;
+    color: #fff
 }
