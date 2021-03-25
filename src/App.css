@@ -30,12 +30,12 @@ body {
     flex-flow: row wrap;
 }
 
-.space-around{
+.space-around {
     justify-content: space-around;
 }
 
 .justify-center {
-    justify-content: center
+    justify-content: center;
 }
 
 .align-center {
@@ -86,7 +86,7 @@ body {
     margin: 1rem 0;
 }
 
-button {
+.pagination button {
     background: #fff;
     border-radius: 0.25rem;
     border: 0;
@@ -94,7 +94,15 @@ button {
     margin: 0 0.25rem;
 }
 
-.active {
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.pagination button.active {
     background: #49a6e9;
-    color: #fff
+    color: #fff;
 }
