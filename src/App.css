@@ -105,4 +105,5 @@ button:disabled {
 .pagination button.active {
     background: #49a6e9;
     color: #fff;
+    font-weight: 700;
 }
