@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "../../api/fetch";
 import { Header } from "../../components/Header/Header";
 import { StoriesSection } from "../../components/StoriesSection/StoriesSection";
@@ -7,9 +7,11 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Pagination } from "../../components/Pagination/Pagination";
 
 export const MainPage = () => {
+    const [currentPage, setCurrentPage] = useState(1);
     const { list, loading, error } = useFetch(
-        "http://hn.algolia.com/api/v1/search?tags=story"
+        `http://hn.algolia.com/api/v1/search?tags=story&page=${currentPage}`
     );
+
     return (
         <div className="container">
             <Header />
@@ -23,8 +25,12 @@ export const MainPage = () => {
                 />
             ) : (
                 <>
-                <StoriesSection list={list} />
-                <Pagination  />
+                    <StoriesSection list={list} />
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={(!loading && list?.nbPages - 1) || 1}
+                        setCurrentPage={setCurrentPage}
+                    />
                 </>
             )}
         </div>

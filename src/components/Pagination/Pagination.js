@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { usePagination } from "react-pagination-hook";
 
-export const Pagination = (
-    // currentPage = 1,
-    // totalPages = 0,
-    // totalItems = 0,
-) => {
-    const [initialPage, setInitialPage] = React.useState(1);
-    const [numberOfPages, setNumberOfPages] = React.useState(10);
+export const Pagination = ({
+    currentPage = 1,
+    totalPages = 1,
+    setCurrentPage,
+}) => {
+    const [initialPage, setInitialPage] = React.useState(currentPage);
+    const [numberOfPages, setNumberOfPages] = React.useState(totalPages);
     const [maxButtons, setMaxButtons] = React.useState(4);
     const { activePage, visiblePieces, goToPage } = usePagination({
         initialPage,
@@ -28,6 +28,10 @@ export const Pagination = (
         }
     }, [maxButtons, numberOfPages]);
 
+    useEffect(() => {
+        setNumberOfPages(totalPages);
+    }, [totalPages]);
+
     return (
         <div className="pagination flex-container justify-center">
             {visiblePieces.map((visiblePiece, index) => {
@@ -42,7 +46,10 @@ export const Pagination = (
                 }
 
                 const { pageNumber } = visiblePiece;
-                const onClick = () => goToPage(pageNumber);
+                const onClick = () => {
+                    goToPage(pageNumber);
+                    setCurrentPage(pageNumber);
+                };
 
                 if (visiblePiece.type === "page-number") {
                     const isActive = pageNumber === activePage;
@@ -73,8 +80,7 @@ export const Pagination = (
     );
 };
 
-// Pagination.propTypes = {
-//     currentPage: PropTypes.number.isRequired,
-//     totalPages: PropTypes.number.isRequired,
-//     totalItems: PropTypes.number.isRequired,
-// };
+Pagination.propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    totalPages: PropTypes.number.isRequired,
+};
