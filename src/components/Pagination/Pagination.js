@@ -83,4 +83,5 @@ export const Pagination = ({
 Pagination.propTypes = {
     currentPage: PropTypes.number.isRequired,
     totalPages: PropTypes.number.isRequired,
+    setCurrentPage: PropTypes.func.isRequired,
 };
