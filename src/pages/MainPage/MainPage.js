@@ -9,7 +9,7 @@ import { Pagination } from "../../components/Pagination/Pagination";
 export const MainPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const { list, loading, error } = useFetch(
-        `http://hn.algolia.com/api/v1/search?tags=story&page=${currentPage}`
+        `https://hn.algolia.com/api/v1/search?tags=story&page=${currentPage}`
     );
 
     return (
