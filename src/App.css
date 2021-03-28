@@ -54,7 +54,7 @@ body {
     background: #fff;
     border-radius: 0.25rem;
     padding: 1rem 2rem;
-    width: 48%;
+    width: 49%;
     margin: 1%;
     box-sizing: border-box;
 }
@@ -106,4 +106,32 @@ button:disabled {
     background: #49a6e9;
     color: #fff;
     font-weight: 700;
+}
+
+.search {
+    width: 15rem;
+    float: right;
+}
+
+.search input {
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.search input:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.search svg {
+    position: relative;
+    top: -2.3rem;
+    right: 0.5rem;
 }

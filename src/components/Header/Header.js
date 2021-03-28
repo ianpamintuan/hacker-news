@@ -3,16 +3,18 @@ import { SearchInput } from "../SearchInput/SearchInput";
 
 export const Header = () => {
     return (
-        <form className="flex-container align-center">
+        <form className="flex-container">
             <FlexItem>
                 <h1>Search Hacker News</h1>
             </FlexItem>
             <FlexItem className="align-right">
-                <SearchInput
-                    onChange={(searchText) => {
-                        // API call here
-                    }}
-                />
+                <div className="search">
+                    <SearchInput
+                        onChange={(searchText) => {
+                            // API call here
+                        }}
+                    />
+                </div>
             </FlexItem>
         </form>
     );
