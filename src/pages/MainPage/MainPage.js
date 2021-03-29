@@ -22,7 +22,10 @@ export const MainPage = () => {
     return (
         <div className="container">
             <Header onChange={debounce(handleTextChange, 1000)} />
-            {loading ? (
+            {!loading && error && (
+                <div className="error text-center">{error}</div>
+            )}
+            {loading && (
                 <Loader
                     type="Oval"
                     color="#49a6e9"
@@ -30,16 +33,20 @@ export const MainPage = () => {
                     width={80}
                     className="centered"
                 />
-            ) : (
-                <>
-                    <StoriesSection list={list} />
-                    <Pagination
-                        currentPage={currentPage}
-                        totalPages={(!loading && list?.nbPages - 1) || 1}
-                        setCurrentPage={setCurrentPage}
-                    />
-                </>
             )}
+            {!loading &&
+                (list && list.nbHits > 0 ? (
+                    <>
+                        <StoriesSection list={list} />
+                        <Pagination
+                            currentPage={currentPage}
+                            totalPages={(!loading && list?.nbPages - 1) || 1}
+                            setCurrentPage={setCurrentPage}
+                        />
+                    </>
+                ) : (
+                    <div className="text-center"> No results found </div>
+                ))}
         </div>
     );
 };
