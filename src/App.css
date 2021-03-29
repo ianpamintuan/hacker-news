@@ -135,3 +135,21 @@ button:disabled {
     top: -2.3rem;
     right: 0.5rem;
 }
+
+@media (max-width: 767px) {
+    .flex-container:not(.pagination) {
+        flex-direction: column;
+    }
+    .header {
+        text-align: center;
+    }
+    .search {
+        width: 100%;
+        float: none;
+        margin-top: 1rem;
+    }
+    .story {
+        width: 100%;
+        margin: 1% auto;
+    }
+}

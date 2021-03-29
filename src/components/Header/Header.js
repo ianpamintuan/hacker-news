@@ -3,7 +3,7 @@ import { SearchInput } from "../SearchInput/SearchInput";
 
 export const Header = () => {
     return (
-        <form className="flex-container">
+        <form className="flex-container header">
             <FlexItem>
                 <h1>Search Hacker News</h1>
             </FlexItem>
