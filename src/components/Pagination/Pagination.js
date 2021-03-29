@@ -7,7 +7,7 @@ export const Pagination = ({
     totalPages = 1,
     setCurrentPage,
 }) => {
-    const [initialPage, setInitialPage] = React.useState(currentPage);
+    const [initialPage, setInitialPage] = React.useState(currentPage + 1);
     const [numberOfPages, setNumberOfPages] = React.useState(totalPages);
     const [maxButtons, setMaxButtons] = React.useState(4);
     const { activePage, visiblePieces, goToPage } = usePagination({
@@ -18,7 +18,7 @@ export const Pagination = ({
 
     useEffect(() => {
         if (initialPage > numberOfPages) {
-            setInitialPage(numberOfPages);
+            setInitialPage(numberOfPages + 1);
         }
     }, [initialPage, numberOfPages]);
 
@@ -29,7 +29,7 @@ export const Pagination = ({
     }, [maxButtons, numberOfPages]);
 
     useEffect(() => {
-        setNumberOfPages(totalPages);
+        setNumberOfPages(totalPages > 1 ? totalPages + 1 : totalPages);
     }, [totalPages]);
 
     return (
@@ -48,7 +48,7 @@ export const Pagination = ({
                 const { pageNumber } = visiblePiece;
                 const onClick = () => {
                     goToPage(pageNumber);
-                    setCurrentPage(pageNumber);
+                    setCurrentPage(pageNumber - 1);
                 };
 
                 if (visiblePiece.type === "page-number") {

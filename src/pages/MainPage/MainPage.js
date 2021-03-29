@@ -9,14 +9,14 @@ import { debounce } from "debounce";
 
 export const MainPage = () => {
     const [query, setQuery] = useState("");
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
     const { list, loading, error } = useFetch(
         `https://hn.algolia.com/api/v1/search?tags=story&query=${query}&page=${currentPage}`
     );
 
     const handleTextChange = (text) => {
         setQuery(text);
-        setCurrentPage(1);
+        setCurrentPage(0);
     };
 
     return (
