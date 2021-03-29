@@ -1,7 +1,8 @@
 import { FlexItem } from "../FlexItem/FlexItem";
 import { SearchInput } from "../SearchInput/SearchInput";
+import PropTypes from "prop-types";
 
-export const Header = () => {
+export const Header = ({ onChange }) => {
     return (
         <form className="flex-container header">
             <FlexItem>
@@ -10,12 +11,14 @@ export const Header = () => {
             <FlexItem className="align-right">
                 <div className="search">
                     <SearchInput
-                        onChange={(searchText) => {
-                            // API call here
-                        }}
+                        onChange={onChange}
                     />
                 </div>
             </FlexItem>
         </form>
     );
+};
+
+Header.propType = {
+    onChange: PropTypes.func.isRequired,
 };
